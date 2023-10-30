@@ -22,7 +22,7 @@ func MethodNotAllowed(w http.ResponseWriter, r *http.Request) {
 }
 
 func BadRequest(w http.ResponseWriter, r *http.Request) {
-	err := "method not allowed"
+	err := "bad request"
 	response(w, r, http.StatusNotFound, render.M{"error": err})
 }
 
