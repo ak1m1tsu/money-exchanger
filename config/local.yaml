@@ -1,0 +1,8 @@
+logger:
+  level: debug
+server:
+  port: 9090
+database:
+  dsn: redis://default:guest@localhost:9077/0/
+external_api:
+  base_url: https://api.currencyfreaks.com/v2.0/rates

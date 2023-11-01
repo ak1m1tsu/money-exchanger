@@ -3,9 +3,10 @@ package config
 import "github.com/ilyakaznacheev/cleanenv"
 
 type Config struct {
-	Logger   `yaml:"logger"`
-	Server   `yaml:"server"`
-	Database `yaml:"database"`
+	Logger      `yaml:"logger"`
+	Server      `yaml:"server"`
+	Database    `yaml:"database"`
+	ExternalAPI `yaml:"external_api"`
 }
 
 type Logger struct {
@@ -18,6 +19,11 @@ type Server struct {
 
 type Database struct {
 	DSN string `yaml:"dsn" env:"DATABASE_DSN"`
+}
+
+type ExternalAPI struct {
+	BaseURL string `yaml:"base_url" env:"EXTERNAL_API_BASE_URL"`
+	Key     string `yaml:"key" env:"EXTERNAL_API_KEY"`
 }
 
 func New(file string) (*Config, error) {
